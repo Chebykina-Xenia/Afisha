@@ -47,13 +47,14 @@ public class MenegerFilms {
         int resultLength = 0;
         if (items.length <= limit) {
             resultLength = items.length;
-        }
-        if (items.length > limit) {
+        } else {
             resultLength = limit;
         }
         FilmItem[] result = new FilmItem[resultLength];
         for (int i = 0; i < resultLength; i++) {
-            int index = resultLength - i - 1;
+            if (items.length <= limit) {
+            }
+            int index = items.length - i - 1;
             result[i] = items[index];
         }
         return result;
